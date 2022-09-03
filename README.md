@@ -1,55 +1,48 @@
-# GRBLHAL2000 for PrintNC EST
+# Flexi-HAL CNC Controller
 
 ![Logo](/readme_images/logo_sm.jpg)
 
-Expatria Technologies GRBLHAL Breakout board
+Expatria Technologies GRBLHAL/uCNC/LinuxCNC (and more!) CNC control board
 
-grblHAL is a no-compromise, high performance, low cost alternative to parallel-port-based motion control for CNC milling, and the GRBLHAL2000 breakout board is a highly integrated, no compromise host platform for this awesome software.  Utilizing the high-performance PJRC Teensy 4.1 module, this board is designed to be a community driven project for the PrintNC, but useful for driving any type of CNC machine that uses external stepper drivers.
+The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  Primarily, the board supports both GRBLHAL and LinuxCNC.  If you buy a board from Expatria, it will ship with GRBLHAL pre-installed along with your selected machine configuraion.  This allows you to very quickly get up and running with GRBLHAL.  In addition, a customized port of the awesome Remora project has been developed alongside Flexi-HAL so that you can easily switch to LinuxCNC But this board does include a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
-The GRBLHAL2000 was designed specifically for that machines that we are building in our lab, it is not intended to be everything to everyone.  The GRBL world is surprisingly vibrant and it is very likely that if we are missing a key feature for you, there are other designs out there that will be just what you are looking for.  But this board does include a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC community, and Open Source Hardware, the PNC HAL 2000 will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-P V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
+The best place to get a board (other than ordering a stack from the provided CAM files) is from Expatria online shop **LINK***.  If you like our designs, please consider buying a board to help support our continued open-source development efforts.  It's the best way to support what we're doing.
 
-Since this is not a commercial product, the best place to get a board (other than ordering a stack from the provided CAM files) is from the PrintNC community:
-https://wiki.printnc.info/en/grbl/GRBLHAL2000-marketplace
+The Flexi-HAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
 
-The most recent A6 revision incorporates community driven updates from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  In addition, the GRBLHAL2000 is intended to be used with the I2C jog controller or similar peripheral:
-
-https://github.com/Expatria-Technologies/I2C_Jog_Controller
+https://github.com/Expatria-Technologies/RT_Jog_Controller
 
 
-The key features of the GRBLHAL2000:
+The key features of the Flexi-HAL:
 
 1) Integrated support for 3 wire powered switches such as the inductive type commonly used by the PrintNC community.
-3) Onboard 5V regulator for the Teensy and PI connectors.
+2) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
+3) Onboard 5V regulator for the MCU, pendant and PI connectors.
 4) Integrated RS485 with automatic direction control.
 5) Support for closed loop stepper motors and servos.
-6) Differential interface for Spindle Sync inputs.
-7) Sparkfun QWIIC differential I2C endpoint - extends the range of I2C and creates a robust data link for real-time jogging and control.  Note that due to chip availability issues, this interface has been replaced with pin headers on the A5 revision onwards.  See below for details.
-8) Raspberry Pi GPIO connector allows integration of sender software and extended possibilities for network connectivity.
+6) Differential interface for a spindle encoder input that can be utilized by GRBLHAL and LinuxCNC.
+7) Expatria Technologies real-time control port for remote handwheels and pendants.
+8) Raspberry Pi GPIO connector allows integration of sender software allows the board to host a full LinuxCNC installation.
 
-In addition, the board offers many of the same features found on other 32 bit GRBL controllers:
+In addition, the board offers many of the same features found on other 32 bit controllers:
 
-1) 5 axes of external step/direction for driving external stepper or servo drivers.
-2) 10V or 5V spindle control.
-3) 3 wire (powered) connections for standard GRBL buttons on breakout RJ45 connector.
+1) 10V or 5V spindle control.
+3) 3 wire (powered) connections for standard CNC buttons on a breakout RJ45 connector that utilizes components compatible with the PrintNC EST project.
 4) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
 5) Flood/mist relay drivers
 6) Additional auxilliary inputs and relay driver outputs.
 
 Optimized GRBLHAL driver is located here:
-https://github.com/Expatria-Technologies/iMXRT1062
+https://github.com/Expatria-Technologies/STM32F4xx
 
-## GRBLHAL2000 Overview
+LinuxCNC build for SPI Remora will be published when it is available.
+
+## Flexi-HAL Overview
 
 ![Overview Image](/readme_images/Board_Overview.jpg)
 
-### Teensy 4.1 Module
+### STM32F446 Microcontroller
 The GRBLHAL2000 uses the excellent Teensy4.1 port of GRBLHAL.  Both ethernet and USB-UART solutions can be used for sending g-code.  A UART is also connected to the PI header.
-
-#### Soldering Instructions
-The following pins need to be soldered between the GrblHAL2k and the Teensy: 
-<img src="/readme_images/TeensySoldering.png" width="500">
-
-https://github.com/grblHAL/Plugin_networking/
 
 ### Power Input
 There is a single input for 12-24VDC.  The board has its own onboard 5V regulator to power the Teensy module as well as a Pi Zero W (recommended) or Pi 3 A+ that is attached to the Pi GPIO header.  There is also a small capacity 12V LDO that is specifically for driving the limit and user switches, as well as optionally providing the base voltage for the 10V spindle output.  When driving the board with less than 14V input, it may not be possible to adjust the spindle output voltage to the full 10V.  In this case we recommend applying 12V to the external spindle supply input directly.
