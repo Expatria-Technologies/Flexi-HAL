@@ -13,6 +13,7 @@ The Flexi-HAL incorporates community driven elements from the PrintNC Electronic
 https://github.com/Expatria-Technologies/RT_Jog_Controller
 
 
+
 The key features of the Flexi-HAL:
 
 1) Integrated support for 3 wire powered switches such as the inductive type commonly used by the PrintNC community.
@@ -39,7 +40,7 @@ LinuxCNC build for SPI Remora will be published when it is available.
 
 ## Flexi-HAL Overview
 
-![Overview Image](/readme_images/Board_Overview.jpg)
+![Overview Image](/readme_images/Board_Overview.png)
 
 ### STM32F446 Microcontroller
 The GRBLHAL2000 uses the excellent Teensy4.1 port of GRBLHAL.  Both ethernet and USB-UART solutions can be used for sending g-code.  A UART is also connected to the PI header.
