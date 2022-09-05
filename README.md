@@ -51,7 +51,7 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
-<img src="/readme_images/power_bypass.jpg" width="500">
+<img src="/readme_images/power_bypass.jpg" width="700">
 By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
 
 ### Stepper Drivers
