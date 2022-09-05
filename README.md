@@ -49,7 +49,7 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
-<img src="/readme_images/power_bypass.jpg" width="700">
+<img src="/readme_images/power_bypass.jpg" width="500">
 By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
 
 ### Stepper Drivers
@@ -61,7 +61,7 @@ The stepper drivers are designed to be used with IDC connectors that are quick t
 
 Traditional GRBL spindle control interface for 0-10V or 0-5V spindle control.  Uses a dual-stage output driver for linear response.  Spindle power supply is selectable between 5V, 12V or external.  Note that when running the board with less than 14v input, it may not be possible to reach the full 10V output level - this is due to the dropout of the 12V LDO.  In this case, use the external spindle power input to connect your 12v and bypass the LDO for the spindle control voltage.
 
-<img src="/readme_images/Spindle_PWM_Config.jpg" width="300">
+<img src="/readme_images/Spindle_PWM_Config.jpg" width="500">
 
 Near the main power input of the Flexi-HAL there is a diagram showing how a set of jumpers may be configured to enable 0-10V analog or TTL PWM output.  This jumper allows you to have a 12V compliant TTL PWM signal to drive a device like a laser engraver or an ESC.
 
