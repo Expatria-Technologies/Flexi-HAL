@@ -114,7 +114,7 @@ This port is intended to allow for external pendant type devices to issue real-t
 https://github.com/grblHAL/Plugin_I2C_keypad/
 
 ### Spindle Sync Port
-This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is most suitable for spindle applications.
+This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is suitable for most spindle applications.
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
