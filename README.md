@@ -26,7 +26,7 @@ The key features of the Flexi-HAL:
 9) 10V or 5V spindle control.
 10) 3 wire (powered) connections for standard CNC buttons on a breakout RJ45 connector that utilizes components compatible with the PrintNC EST project.
 11) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
-12) Flood/mist relay drivers
+12) Flood/Mist/Spindle relay drivers
 13) Additional auxilliary inputs and relay driver outputs.
 
 Optimized GRBLHAL driver is located here:
