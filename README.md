@@ -75,8 +75,6 @@ https://github.com/grblHAL/Plugins_spindle/
 
 ### 5 Axis limit inputs
 
-<img src="/readme_images/limit_mod_render.jpg" width="150">
-
 By default both GRBL and the Flexi-HAL expect NPN NC limit switches.  PNP switches are not supported. NO switches can also be used on any switch input.
 
 The first four axes have single limit inputs that are also accessible via the RJ45 EST limit breakout connector.  A sample design for a breakout panel is included in the CAM_Outputs folder.  GRBL always knows the direction of travel so individual min and max pins are not required.  Auto-squaring is supported by enabling ganged axes in GRBLHAL and setting the appropriate pins.
@@ -87,16 +85,15 @@ For the dual-input signals there is no need to terminate unused ports.
 
 The RJ45 pinout:
 
-<img src="/readme_images/limit_rj45_pinout.jpg" width="150">
+<img src="/readme_images/limit_rj45_pinout.jpg" width="150"><img src="/readme_images/limit_mod_render.jpg" width="150">
 
 ### User Buttons
-<img src="/readme_images/User_mod_render.jpg" width="400">
 
 Standard CNC functions are mapped to 4 inputs.  These signals are primarily intended to be used via the user RJ45 connector.  They are also exposed via 3 wire connections on the main PCB.  When multiplexed these signals must be NO logic.  A sample design for a button panel utilizing clear PETG buttons is included in the CAM_Outputs folder.
 
 The RJ45 pinout:
 
-<img src="/readme_images/user_rj45_pinout.jpg" width="150">
+<img src="/readme_images/user_rj45_pinout.jpg" width="150"><img src="/readme_images/User_mod_render.jpg" width="400">
 
 The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
