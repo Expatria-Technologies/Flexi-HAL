@@ -51,13 +51,13 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
-<img src="/readme_images/power bypass.jpg" width="500">
+<img src="/readme_images/power_bypass.jpg" width="700">
 By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
 
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
 
-The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortuantely you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin conneciton allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for maximum speed and signal integrity.
+The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortuantely you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin conneciton allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for the motion signals.
 
 ### Analog Spindle Control
 
@@ -106,9 +106,8 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The maximum coil current for each output should not exceed 250mA.
 
 ### Auxillary relay drivers
-<img src="/readme_images/AUX_POWER.png" width="500">
+<img src="/readme_images/AUX_POWER.jpg" width="200">
 Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  By default the jumper is left unpopulated and power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications.  Never populate P17 and the external supply at the same time.
-
 
 ### Real-Time Control Port
 <img src="/readme_images/Jog2k_Enclosure_2.png" width="500">
@@ -117,7 +116,7 @@ This port is intended to allow for external pendant type devices to issue real-t
 https://github.com/grblHAL/Plugin_I2C_keypad/
 
 ### Spindle Sync Port
-This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  A encoder such as E6B2-CWZ1X is most suitable for spindle applications.
+This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is most suitable for spindle applications.
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
