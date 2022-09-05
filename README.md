@@ -1,6 +1,6 @@
 ![Logo](/readme_images/logo_sm.jpg)
 # Flexi-HAL CNC Controller
-<img src="/readme_images/Board_Photo.jpg" width="700">
+<img src="/readme_images/Board_Photo.jpg" width="800">
 
 
 Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
@@ -45,13 +45,13 @@ Primarily, the board supports both GRBLHAL and LinuxCNC.  Binary firmware builds
 By using a common STM32F4 MCU, the Flexi-HAL is also able to easily host ports of uCNC, Marlin and even Klipper so it can drive much more than just CNC machines.
 
 ### Power Input
-<img src="/readme_images/isolation_zones.png" width="300">
+<img src="/readme_images/isolation_zones.png" width="500">
 
 The Flexi-HAL features the capability for full power and ground isolation between the sensitive microncontroller and host circuits, and the external IO that extends out to the rest of the machine.  There is a single input for 12-24VDC.  The board has its own onboard 5V regulator to power the stepper drivers and external RS485 interface.  There is also a small capacity 12V LDO that is specifically for driving the limit and user switches, as well as optionally providing the base voltage for the 10V spindle output.
 
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
-<img src="/readme_images/power bypass.jpg" width="300">
+<img src="/readme_images/power bypass.jpg" width="500">
 By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
 
 ### Stepper Drivers
@@ -102,14 +102,16 @@ The RJ45 pinout:
 
 The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
-### Spindle, Flood and Mist relay drivers - Auxillary relay drivers
-The relay voltage is selectable between either the 12-24V input voltage, or the onboard 5V supply. P9 allows you to select the relay voltage.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, larger external relays are likley required.
+### Spindle, Flood and Mist relay drivers
+The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The maximum coil current for each output should not exceed 250mA.
 
 ### Auxillary relay drivers
-P9 allows you to select the relay voltage.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, larger external relays are likley required.
+<img src="/readme_images/AUX_POWER.png" width="500">
+Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  By default the jumper is left unpopulated and power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications.  Never populate P17 and the external supply at the same time.
+
 
 ### Real-Time Control Port
-<img src="/readme_images/Jog2k_Enclosure_2.png" width="150">
+<img src="/readme_images/Jog2k_Enclosure_2.png" width="500">
 This port is intended to allow for external pendant type devices to issue real-time jogging and override controls to the motion  controller.  It uses I2C signalling and adds additional signals for the keypad interrupt as well as the Halt signal.  We feel that a robust and wired control is the safest way to interact with a CNC machine in real time.  A simple reference controller implementation is under development, but there are some code examples referenced in the GRBLHAL I2C keypad plugin repository:
 
 https://github.com/grblHAL/Plugin_I2C_keypad/
@@ -117,15 +119,12 @@ https://github.com/grblHAL/Plugin_I2C_keypad/
 ### Spindle Sync Port
 This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  A encoder such as E6B2-CWZ1X is most suitable for spindle applications.
 
-### AUX Relay Port
-Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 500 mA.  The relay voltage can be selected via a 3 pin jumper between the external voltage input (12-28V) and the onboard 5V supply.
-
 ### Raspberry PI expansion header
-![Overview Image](/readme_images/Pi_Installed.png)
+<img src="/readme_images/Pi_Installed.png" width="500">
 The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
 
 ### Attributions
-This project uses components from the very helpful actiBMS library for JLCPCB SMT parts.
+This project uses components from the very helpful actiBMS library.
 
 https://github.com/actiBMS/JLCSMT_LIB
 
