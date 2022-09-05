@@ -1,10 +1,11 @@
-# Flexi-HAL CNC Controller
-
 ![Logo](/readme_images/logo_sm.jpg)
+# Flexi-HAL CNC Controller
+<img src="/readme_images/Board_Photo.jpg" width="700">
+
 
 Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
 
-The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  But this board does include a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
+The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
 The best place to get a board (other than ordering a stack from the provided CAM files) is from Expatria online shop **LINK***.  If you like our designs, please consider buying a board to help support our continued open-source development efforts.  It's the best way to support what we're doing.
 
@@ -12,28 +13,21 @@ The Flexi-HAL incorporates community driven elements from the PrintNC Electronic
 
 https://github.com/Expatria-Technologies/RT_Jog_Controller
 
-
-<img src="/readme_images/Board_Photo.jpg" width="700">
-
-
 The key features of the Flexi-HAL:
 
-1) Integrated support for 3 wire powered switches such as the inductive type commonly used by the PrintNC community.
-2) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
+1) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
+2) Integrated support for 3 wire inductive type powered switches.
 3) Onboard 5V regulator for the MCU, pendant and PI connectors.
 4) Integrated RS485 with automatic direction control.
-5) Support for closed loop stepper motors and servos.
+5) Support for closed loop stepper motors and servos with alarm feedback.
 6) Differential interface for a spindle encoder input that can be utilized by GRBLHAL and LinuxCNC.
 7) Expatria Technologies real-time control port for remote handwheels and pendants.
 8) Raspberry Pi GPIO connector allows integration of sender software allows the board to host a full LinuxCNC installation.
-
-In addition, the board offers many of the same features found on other 32 bit controllers:
-
-1) 10V or 5V spindle control.
-3) 3 wire (powered) connections for standard CNC buttons on a breakout RJ45 connector that utilizes components compatible with the PrintNC EST project.
-4) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
-5) Flood/mist relay drivers
-6) Additional auxilliary inputs and relay driver outputs.
+9) 10V or 5V spindle control.
+10) 3 wire (powered) connections for standard CNC buttons on a breakout RJ45 connector that utilizes components compatible with the PrintNC EST project.
+11) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
+12) Flood/mist relay drivers
+13) Additional auxilliary inputs and relay driver outputs.
 
 Optimized GRBLHAL driver is located here:
 https://github.com/Expatria-Technologies/STM32F4xx
@@ -50,14 +44,17 @@ Primarily, the board supports both GRBLHAL and LinuxCNC.  Binary firmware builds
 
 ![Overview Image](/readme_images/Pi_Installed.png)
 
+By using a common STM32F4 MCU, the Flexi-HAL is also able to easily host ports of uCNC, Marlin and even Klipper so it can drive much more than just CNC machines.
+
 ### Power Input
-There is a single input for 12-24VDC.  The board has its own onboard 5V regulator to power the Teensy module as well as a Pi Zero W (recommended) or Pi 3 A+ that is attached to the Pi GPIO header.  There is also a small capacity 12V LDO that is specifically for driving the limit and user switches, as well as optionally providing the base voltage for the 10V spindle output.  When driving the board with less than 14V input, it may not be possible to adjust the spindle output voltage to the full 10V.  In this case we recommend applying 12V to the external spindle supply input directly.
+<img src="/readme_images/isolation_zones.png" width="300">
 
-It is recommended that you cut the 5V power distribution trace on the Teensy 4.1.  This ensures that the USB power on the Teensy and the 5V regulator on the Flexi-HAL do not interact and create potential issues with back-powering.  Alternative solutions are detailed at pjrc:
-
-https://www.pjrc.com/teensy/external_power.html
+The Flexi-HAL features the capability for full power and ground isolation between the sensitive microncontroller and host circuits, and the external IO that extends out to the rest of the machine.  There is a single input for 12-24VDC.  The board has its own onboard 5V regulator to power the stepper drivers and external RS485 interface.  There is also a small capacity 12V LDO that is specifically for driving the limit and user switches, as well as optionally providing the base voltage for the 10V spindle output.
 
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
+
+<img src="/readme_images/power bypass.jpg" width="300">
+By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
 
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
@@ -71,6 +68,8 @@ Traditional GRBL spindle control interface for 0-10V or 0-5V spindle control.  U
 <img src="/readme_images/Spindle_PWM_Config.jpg" width="300">
 
 Near the main power input of the Flexi-HAL there is a diagram showing how a set of jumpers may be configured to enable 0-10V analog or TTL PWM output.  This jumper allows you to have a 12V compliant TTL PWM signal to drive a device like a laser engraver or an ESC.
+
+Two headers - 3 pin P6 and 2 pin P16, connect the analog spindle section to the rest of the board.  P6 allows you to power the spindle section from either the onboard 5V or 12V rails.  If you remove P6 and P16 then the spindle section is completely isolated from the rest of the system and in this configuration can be used to drive motor controllers that require a floating control voltage.  Also, when driving the board with less than 14V input, it may not be possible to adjust the spindle output voltage to the full 10V.  In this case we recommend removing P6 (leave P16 in places) and applying 12V to the external spindle supply input directly.
 
 
 ### RS485 Spindle Control
