@@ -7,8 +7,6 @@ Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
 
 The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
-The best place to get a board (other than ordering a stack from the provided CAM files) is from Expatria online shop **LINK***.  If you like our designs, please consider buying a board to help support our continued open-source development efforts.  It's the best way to support what we're doing.
-
 The Flexi-HAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
 
 https://github.com/Expatria-Technologies/RT_Jog_Controller
@@ -17,16 +15,16 @@ The key features of the Flexi-HAL:
 
 1) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
 2) Integrated support for 3 wire inductive type powered switches.
-3) Onboard 5V regulator for the MCU, pendant and PI connectors.
+3) Onboard 5V power regulator.
 4) Integrated RS485 with automatic direction control.
 5) Support for closed loop stepper motors and servos with alarm feedback.
 6) Differential interface for a spindle encoder input that can be utilized by GRBLHAL and LinuxCNC.
-7) Expatria Technologies real-time control port for remote handwheels and pendants.
-8) Raspberry Pi GPIO connector allows integration of sender software allows the board to host a full LinuxCNC installation.
-9) 10V or 5V spindle control.
+7) Real-time control port for remote handwheels and pendants.
+8) Raspberry Pi GPIO connector allows integration of sender software and allows the board to host a full LinuxCNC installation.
+9) 10V or 5V spindle control including PWM output via selectable jumpers.
 10) 3 wire (powered) connections for standard CNC buttons on a breakout RJ45 connector that utilizes components compatible with the PrintNC EST project.
 11) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
-12) Flood/Mist/Spindle relay drivers
+12) Flood/Mist/Spindle relay drivers.
 13) Additional auxilliary inputs and relay driver outputs.
 
 Optimized GRBLHAL driver is located here:
