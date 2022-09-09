@@ -33,8 +33,8 @@ The key features of the Flexi-HAL:
 12) Flood/Mist/Spindle relay drivers.
 13) Additional auxilliary inputs and relay driver outputs.
 
-Optimized GRBLHAL driver is located here:
-https://github.com/Expatria-Technologies/STM32F4xx
+Optimized GRBLHAL driver with is located here:
+https://github.com/Expatria-Technologies/STM32F4xx/releases
 
 LinuxCNC build for SPI Remora will be published when it is available.
 
