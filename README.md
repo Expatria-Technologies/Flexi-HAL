@@ -6,6 +6,7 @@
 Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
 
 Currently available in our online store:
+
 https://expatria.myshopify.com/products/flexi-hal
 
 Please consider buying a board to support our open-source designs. 
