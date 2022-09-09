@@ -130,6 +130,8 @@ This port allows a differential connection to an external module for a robust GR
 <img src="/readme_images/Pi_Installed.png" width="500">
 The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
 
+<img src="/readme_images/Pi_Pinout.jpg" width="500">
+
 ### Attributions
 This project uses components from the very helpful actiBMS library.
 
