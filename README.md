@@ -5,6 +5,12 @@
 
 Expatria Technologies GRBLHAL and LinuxCNC (and more!) CNC control board
 
+Currently available in our online store:
+
+https://expatria.myshopify.com/products/flexi-hal
+
+Please consider buying a board to support our open-source designs. 
+
 The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
 The Flexi-HAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
@@ -57,7 +63,7 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
 <img src="/readme_images/power_bypass.jpg" width="500">
-By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when connecting via the USBC connector.
+Normally the MCU and RPI header will be powered via the USBC connector.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
 
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
@@ -123,6 +129,8 @@ This port allows a differential connection to an external module for a robust GR
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
 The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
+
+<img src="/readme_images/Pi_Pinout.jpg" width="500">
 
 ### Attributions
 This project uses components from the very helpful actiBMS library.
