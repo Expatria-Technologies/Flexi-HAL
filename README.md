@@ -49,7 +49,7 @@ Primarily, the board supports both GRBLHAL and LinuxCNC.  Binary firmware builds
 By using a common STM32F4 MCU, the Flexi-HAL is also able to easily host ports of uCNC, Marlin and even Klipper so it can drive much more than just CNC machines.
 
 ### UF2 Bootloader
-The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatria will come with this bootloader installed. This allows you to upgrade or change the firmware on the flexi as easily as copying a file to a USB driver.  Pre-built binary firmwares from Expatria are distributed as UF2 files.  There are two ways to access bootloader mode and change the firmware:
+The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatria will come with this bootloader installed. This allows you to upgrade or change the firmware on the flexi as easily as copying a file to a USB drive.  Pre-built binary firmwares from Expatria are distributed as UF2 files.  There are two ways to access bootloader mode and change the firmware:
 1) Power up the MCU section (connect the USB cable) while holding the HALT and HOLD buttons.
 2) Double-tap the reset (RST) button on the side of the board near the USBC port.
 
