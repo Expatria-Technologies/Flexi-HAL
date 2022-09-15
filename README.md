@@ -32,6 +32,7 @@ The key features of the Flexi-HAL:
 11) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
 12) Flood/Mist/Spindle relay drivers.
 13) Additional auxilliary inputs and relay driver outputs.
+14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 
 Optimized GRBLHAL driver with is located here:
 https://github.com/Expatria-Technologies/STM32F4xx/releases
