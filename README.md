@@ -32,9 +32,10 @@ The key features of the Flexi-HAL:
 11) XYZA limit switches and probe/toolsetter on breakout RJ45 connector.
 12) Flood/Mist/Spindle relay drivers.
 13) Additional auxilliary inputs and relay driver outputs.
+14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 
-Optimized GRBLHAL driver is located here:
-https://github.com/Expatria-Technologies/STM32F4xx
+Optimized GRBLHAL driver with is located here:
+https://github.com/Expatria-Technologies/STM32F4xx/releases
 
 LinuxCNC build for SPI Remora will be published when it is available.
 
@@ -49,7 +50,7 @@ Primarily, the board supports both GRBLHAL and LinuxCNC.  Binary firmware builds
 By using a common STM32F4 MCU, the Flexi-HAL is also able to easily host ports of uCNC, Marlin and even Klipper so it can drive much more than just CNC machines.
 
 ### UF2 Bootloader
-The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatria will come with this bootloader installed. This allows you to upgrade or change the firmware on the flexi as easily as copying a file to a USB driver.  Pre-built binary firmwares from Expatria are distributed as UF2 files.  There are two ways to access bootloader mode and change the firmware:
+The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatria will come with this bootloader installed. This allows you to upgrade or change the firmware on the flexi as easily as copying a file to a USB drive.  Pre-built binary firmwares from Expatria are distributed as UF2 files.  There are two ways to access bootloader mode and change the firmware:
 1) Power up the MCU section (connect the USB cable) while holding the HALT and HOLD buttons.
 2) Double-tap the reset (RST) button on the side of the board near the USBC port.
 
@@ -92,7 +93,7 @@ By default both GRBL and the Flexi-HAL expect NPN NC limit switches.  PNP switch
 
 The first four axes have single limit inputs that are also accessible via the RJ45 EST limit breakout connector.  A sample design for a breakout panel is included in the CAM_Outputs folder.  GRBL always knows the direction of travel so individual min and max pins are not required.  Auto-squaring is supported by enabling ganged axes in GRBLHAL and setting the appropriate pins.
 
-In addition to the limit signals, there are two probe input pins on the limit RJ45 breakout connector and the main PCB that are multiplexed via XOR logic and share a single input pin on the microcontroller..
+In addition to the limit signals, there are two probe input pins on the limit RJ45 breakout connector and the main PCB that are multiplexed via XOR logic and share a single input pin on the microcontroller.
 
 For the dual-input signals there is no need to terminate unused ports.
 
@@ -102,7 +103,7 @@ The RJ45 pinout:
 
 ### User Buttons
 
-Standard CNC functions are mapped to 4 inputs.  These signals are primarily intended to be used via the user RJ45 connector.  They are also exposed via 3 wire connections on the main PCB.  When multiplexed these signals must be NO logic.  A sample design for a button panel utilizing clear PETG buttons is included in the CAM_Outputs folder.
+Standard CNC functions are mapped to 4 inputs.  These signals are primarily intended to be used via the user RJ45 connector.  They are also exposed via 3 wire connections on the main PCB.  When multiplexed these signals must be NO logic.
 
 The RJ45 pinout:
 
