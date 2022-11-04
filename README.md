@@ -83,7 +83,7 @@ Two headers - 3 pin P6 and 2 pin P16, connect the analog spindle section to the 
 
 
 ### RS485 Spindle Control
-This interface is primarily intended to be used with a Huanyang style VFD for spindle control.  The A and B pins are marked on the bottoms side of the PCB.  Simply connect the appropriate pins to the terminals on the VFD.  Note that the GND pin should be used for signal common, it should not be connected to the shield of a shielded cable.
+This interface is primarily intended to be used with a Huanyang style VFD for spindle control.  The A, B and G (common) pins are marked on the top and bottoms sides of the PCB.  Simply connect the appropriate pins to the terminals on the VFD.  Note that the G pin should be used for signal common, it should not be connected to the shield of a shielded cable.
 
 https://github.com/grblHAL/Plugins_spindle/
 
