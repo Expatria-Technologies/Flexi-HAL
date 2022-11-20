@@ -34,10 +34,11 @@ The key features of the Flexi-HAL:
 13) Additional auxilliary inputs and relay driver outputs.
 14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 
-Optimized GRBLHAL driver is located here:
+Optimized GRBLHAL driver is located here:  
 https://github.com/Expatria-Technologies/STM32F4xx/releases
 
-LinuxCNC build for SPI Remora will be published when it is available.
+Source code for the customized Remora component to run in LinuxCNC is located here:  
+https://github.com/Expatria-Technologies/remora-flexi-hal
 
 ## Flexi-HAL Overview
 
