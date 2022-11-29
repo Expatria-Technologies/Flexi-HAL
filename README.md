@@ -34,10 +34,11 @@ The key features of the Flexi-HAL:
 13) Additional auxilliary inputs and relay driver outputs.
 14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 
-Optimized GRBLHAL driver is located here:
+Optimized GRBLHAL driver is located here:  
 https://github.com/Expatria-Technologies/STM32F4xx/releases
 
-LinuxCNC build for SPI Remora will be published when it is available.
+Source code for the customized Remora component to run in LinuxCNC is located here:  
+https://github.com/Expatria-Technologies/remora-flexi-hal
 
 ## Flexi-HAL Overview
 
@@ -83,7 +84,7 @@ Two headers - 3 pin P6 and 2 pin P16, connect the analog spindle section to the 
 
 
 ### RS485 Spindle Control
-This interface is primarily intended to be used with a Huanyang style VFD for spindle control.  The A and B pins are marked on the bottoms side of the PCB.  Simply connect the appropriate pins to the terminals on the VFD.  Note that the GND pin should be used for signal common, it should not be connected to the shield of a shielded cable.
+This interface is primarily intended to be used with a Huanyang style VFD for spindle control.  The A, B and G (common) pins are marked on the top and bottoms sides of the PCB.  Simply connect the appropriate pins to the terminals on the VFD.  Note that the G pin should be used for signal common, it should not be connected to the shield of a shielded cable.
 
 https://github.com/grblHAL/Plugins_spindle/
 
@@ -120,9 +121,11 @@ Four axilliary relay outputs are exposed.  These have a maximum combined drive c
 
 ### Real-Time Control Port
 <img src="/readme_images/Jog2k_Enclosure_2.png" width="500">
-This port is intended to allow for external pendant type devices to issue real-time jogging and override controls to the motion  controller.  It uses I2C signalling and adds additional signals for the keypad interrupt as well as the Halt signal.  We feel that a robust and wired control is the safest way to interact with a CNC machine in real time.  A simple reference controller implementation is under development, but there are some code examples referenced in the GRBLHAL I2C keypad plugin repository:
+This port is intended to allow for external pendant type devices to issue real-time jogging and override controls to the motion  controller.  It uses I2C signalling and adds additional signals for the keypad interrupt as well as the Halt signal.  We feel that a robust and wired control is the safest way to interact with a CNC machine in real time.  A simple reference controller implementation is under active development, but there are some code examples referenced in the GRBLHAL I2C keypad plugin repository:
 
 https://github.com/grblHAL/Plugin_I2C_keypad/
+
+https://github.com/Expatria-Technologies/RT_Jog_Controller/
 
 ### Spindle Sync Port
 This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is suitable for most spindle applications.
