@@ -44,6 +44,10 @@ https://github.com/Expatria-Technologies/remora-flexi-hal
 
 <img src="/readme_images/Board_Overview.png" width="700">
 
+Bottom side pin labels:
+
+<img src="/readme_images/backside.png" width="700">
+
 ### STM32F446 Microcontroller
 
 Primarily, the board supports both GRBLHAL and LinuxCNC.  Binary firmware builds for different axis configurations are published on the Expatria Github.  In addition, a customized port of the awesome Remora project has been developed alongside Flexi-HAL so that you can easily switch to LinuxCNC.  With LinuxCNC, a Raspberry Pi 4b is installed in the Pi GPIO header to ensure the best possible signal integrity for the SPI step generation interface.
