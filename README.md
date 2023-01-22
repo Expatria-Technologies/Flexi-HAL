@@ -140,6 +140,11 @@ The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi typ
 
 <img src="/readme_images/Pi_Pinout.jpg" width="500">
 
+### Accessories
+
+Some 3D printed accessories are avilable in [Mods & Accessories](https://github.com/Expatria-Technologies/Mods-Accessories/), including a DIN rail mount and enclosures/mounts for the limit and button breakouts.
+
+
 ### Attributions
 This project uses components from the very helpful actiBMS library.
 
