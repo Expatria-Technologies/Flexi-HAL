@@ -40,9 +40,16 @@ https://github.com/Expatria-Technologies/STM32F4xx/releases
 Source code for the customized Remora component to run in LinuxCNC is located here:  
 https://github.com/Expatria-Technologies/remora-flexi-hal
 
+Prebuilt Raspberry Pi 4B image is located here:
+https://github.com/Expatria-Technologies/remora-flexi-hal/releases
+
 ## Flexi-HAL Overview
 
 <img src="/readme_images/Board_Overview.png" width="700">
+
+Bottom side pin labels:
+
+<img src="/readme_images/backside.png" width="700">
 
 ### STM32F446 Microcontroller
 
@@ -80,7 +87,7 @@ Traditional GRBL spindle control interface for 0-10V or 0-5V spindle control.  U
 
 Near the main power input of the Flexi-HAL there is a diagram showing how a set of jumpers may be configured to enable 0-10V analog or TTL PWM output.  This jumper allows you to have a 12V compliant TTL PWM signal to drive a device like a laser engraver or an ESC.
 
-Two headers - 3 pin P6 and 2 pin P16, connect the analog spindle section to the rest of the board.  P6 allows you to power the spindle section from either the onboard 5V or 12V rails.  If you remove P6 and P16 then the spindle section is completely isolated from the rest of the system and in this configuration can be used to drive motor controllers that require a floating control voltage.  Also, when driving the board with less than 14V input, it may not be possible to adjust the spindle output voltage to the full 10V.  In this case we recommend removing P6 (leave P16 in places) and applying 12V to the external spindle supply input directly.
+Two headers - 3 pin P6 and 2 pin P16, connect the analog spindle section to the rest of the board.  P6 allows you to power the spindle section from either the onboard 5V or 12V rails.  If you remove P6 and P16 then the spindle section is completely isolated from the rest of the system and in this configuration can be used to drive motor controllers that require a floating control voltage.  Also, when driving the board with less than 14V input, it may not be possible to adjust the spindle output voltage to the full 10V.  In this case we recommend removing P6 (leave P16 in place) and applying 12V to the external spindle supply input directly.
 
 
 ### RS485 Spindle Control
@@ -117,7 +124,7 @@ The Spindle, Flood and Mist relay outputs are driven from the main board supply.
 
 ### Auxillary relay drivers
 <img src="/readme_images/AUX_POWER.jpg" width="200">
-Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  By default the jumper is left unpopulated and power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications.  Never populate P17 and the external supply at the same time.
+Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  By default the jumper is left unpopulated and power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications - they should never be used to drive inductive loads.  Never populate P17 and the external supply at the same time.
 
 ### Real-Time Control Port
 <img src="/readme_images/Jog2k_Enclosure_2.png" width="500">
@@ -135,6 +142,11 @@ This port allows a differential connection to an external module for a robust GR
 The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
 
 <img src="/readme_images/Pi_Pinout.jpg" width="500">
+
+### Accessories
+
+Some 3D printed accessories are avilable in [Mods & Accessories](https://github.com/Expatria-Technologies/Mods-Accessories/), including a DIN rail mount and enclosures/mounts for the limit and button breakouts.
+
 
 ### Attributions
 This project uses components from the very helpful actiBMS library.
