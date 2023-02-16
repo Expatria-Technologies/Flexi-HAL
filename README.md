@@ -52,7 +52,8 @@ Bottom side pin labels:
 <img src="/readme_images/backside.png" width="700">
 
 Pinout List:
-<img src="/readme_images/pinout.png" width="700">
+
+<img src="/readme_images/Pinout.png" width="900">
 
 ### STM32F446 Microcontroller
 
