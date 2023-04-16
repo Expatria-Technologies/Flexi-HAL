@@ -11,7 +11,10 @@ https://expatria.myshopify.com/products/flexi-hal
 
 Please consider buying a board to support our open-source designs. 
 
-Firmware for this controller is available here: https://github.com/Expatria-Technologies/STM32F4xx/releases
+Precompiled firmware for this controller is available here: 
+https://github.com/Expatria-Technologies/STM32F4xx/releases
+
+A web compiler is available here: http://svn.io-engineering.com:8080/
 
 The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
