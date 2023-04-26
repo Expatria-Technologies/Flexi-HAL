@@ -32,7 +32,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-IsVirtualBomDocumentRemoved=0
+IsVirtualBomDocumentRemoved=1
 OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
@@ -321,6 +321,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YFSDBWIA
 
+[Document17]
+DocumentPath=Schematic\2xparallelswitch_HALT.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=39
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=UNLWNZID
+
 [ProjectVariant1]
 UniqueID=2FD7A5CA-1890-45CB-96AB-94166B7423FD
 Description=SMT_ONLY
@@ -406,7 +423,7 @@ UniqueID=88C0E832-ADA3-44FB-9D87-64E364CEB3EA
 Description=FULL_PLACE
 AllowFabrication=0
 ParameterCount=0
-VariationCount=7
+VariationCount=10
 Variation1=Designator=U30|UniqueId=\WIRRTQQZ|Kind=1|AlternatePart= 
 Variation2=Designator=P8|UniqueId=\WPJDROXO\NGEYBBQW|Kind=1|AlternatePart= 
 Variation3=Designator=R?|UniqueId=\AFAOVGNO\ZYPAOYNB|Kind=1|AlternatePart= 
@@ -414,6 +431,9 @@ Variation4=Designator=P18|UniqueId=\AFAOVGNO\WPJDROXO\GOXQWLWV|Kind=1|AlternateP
 Variation5=Designator=R43|UniqueId=\CPSRESAS\ZYPAOYNB|Kind=1|AlternatePart= 
 Variation6=Designator=P18|UniqueId=\CPSRESAS\WPJDROXO\GOXQWLWV|Kind=1|AlternatePart= 
 Variation7=Designator=P8|UniqueId=\CPSRESAS\WPJDROXO\NGEYBBQW|Kind=1|AlternatePart= 
+Variation8=Designator=R44|UniqueId=\CPSRESAS\CQTMQQVI|Kind=1|AlternatePart= 
+Variation9=Designator=P1|UniqueId=\CPSRESAS\PNHPFMIE|Kind=1|AlternatePart= 
+Variation10=Designator=P20|UniqueId=\CPSRESAS\QEAKSBUM|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [SearchPath1]
@@ -434,7 +454,7 @@ Value=Flexi-HAL 2000
 
 [Parameter2]
 Name=PCBREVNO
-Value=A4
+Value=A5
 
 [Parameter3]
 Name=Title
@@ -442,7 +462,7 @@ Value=Flexi-HAL 2000
 
 [Parameter4]
 Name=VarRevNo
-Value=A4
+Value=A5
 
 [Configuration1]
 Name=Default Configuration
@@ -1301,6 +1321,36 @@ OutputName12=Ansys EDB
 OutputDocumentPath12=
 OutputVariantName12=
 OutputDefault12=0
+OutputType13=Ansoft Neutral
+OutputName13=Ansoft Neutral (AutoPCB)
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=HyperLynx
+OutputName14=HyperLynx (AutoPCB)
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=Orcad v7 Capture Design
+OutputName15=Orcad v7 Capture Design (AutoSCH)
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
+OutputType16=P-CAD ASCII
+OutputName16=P-CAD ASCII (AutoPCB)
+OutputDocumentPath16=
+OutputVariantName16=
+OutputDefault16=0
+OutputType17=P-CAD V16 Schematic Design
+OutputName17=P-CAD V16 Schematic Design (AutoSCH)
+OutputDocumentPath17=
+OutputVariantName17=
+OutputDefault17=0
+OutputType18=SiSoft
+OutputName18=SiSoft (AutoPCB)
+OutputDocumentPath18=
+OutputVariantName18=
+OutputDefault18=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
