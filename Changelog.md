@@ -5,7 +5,7 @@
 
 ### A4 Revision
 
-Initial Release
+- Initial Release
 
 ### A5 Revision
 - Added HALT signal polarity selection.
