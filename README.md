@@ -124,6 +124,12 @@ The RJ45 pinout:
 
 The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
+### HALT Polarity Selection
+
+<img src="/readme_images/haltsel.png" width="400">
+
+Starting from A5 revision, the polarity of the HALT signal to the MCU can be inverted by moving the jumper pictured above to the leftmost two pins.  This allows you to connect an NC overtravel sensor or NC e-stop circuit to the FlexiHAL without the need for an external relay.  You must ensure that the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+
 ### Spindle, Flood and Mist relay drivers
 The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The maximum coil current for each output should not exceed 250mA.
 
