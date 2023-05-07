@@ -3,10 +3,11 @@
 
 ## Changelog
 
-###A4 Revision
-Initial Release
+### A4 Revision
 
-###A5 Revision
+- Initial Release
+
+### A5 Revision
 - Added HALT signal polarity selection.
 - Modified RS485 UART isolation for better compatibility with more VFDs under LinuxCNC.
 - Added jumper resistor option to route STP_ALARM signal to B limit switch input.
