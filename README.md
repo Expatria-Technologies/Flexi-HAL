@@ -44,6 +44,9 @@ https://github.com/Expatria-Technologies/remora-flexi-hal
 Prebuilt Raspberry Pi 4B image is located here:
 https://github.com/Expatria-Technologies/remora-flexi-hal/releases
 
+Accessory Breakout PCBs are located here:
+https://github.com/Expatria-Technologies/EST_Accessory_PCB
+
 ## Flexi-HAL Overview
 
 <img src="/readme_images/Board_Overview.png" width="700">
