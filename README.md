@@ -41,10 +41,10 @@ https://github.com/Expatria-Technologies/STM32F4xx/releases
 Source code for the customized Remora component to run in LinuxCNC is located here:  
 https://github.com/Expatria-Technologies/remora-flexi-hal
 
-Prebuilt Raspberry Pi 4B image is located here:
+Prebuilt Raspberry Pi 4B image is located here:  
 https://github.com/Expatria-Technologies/remora-flexi-hal/releases
 
-Accessory Breakout PCBs are located here:
+Accessory Breakout PCBs are located here:  
 https://github.com/Expatria-Technologies/EST_Accessory_PCB
 
 ## Flexi-HAL Overview
