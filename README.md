@@ -148,6 +148,12 @@ https://github.com/Expatria-Technologies/RT_Jog_Controller/
 ### Spindle Sync Port
 This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is suitable for most spindle applications.
 
+There is also a small breakout available that exposes these signals for 5V single-ended NPN input to interface with more basic sensors and other switched inputs.
+
+The RJ45 pinout:
+
+<img src="/readme_images/encoder_rj45_pinout.jpg" width="150"><img src="/readme_images/encoder_render.jpg" width="400">
+
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
 The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
