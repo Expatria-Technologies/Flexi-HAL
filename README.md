@@ -115,7 +115,7 @@ For the dual-input signals there is no need to terminate unused ports.
 
 The RJ45 pinout:
 
-<img src="/readme_images/limit_rj45_pinout.jpg" width="150"><img src="/readme_images/limit_mod_render.jpg" width="150">
+<img src="/readme_images/limit_rj45_pinout.jpg" width="150">
 
 ### User Buttons
 
@@ -123,7 +123,7 @@ Standard CNC functions are mapped to 4 inputs.  These signals are primarily inte
 
 The RJ45 pinout:
 
-<img src="/readme_images/user_rj45_pinout.jpg" width="150"><img src="/readme_images/User_mod_render.jpg" width="400">
+<img src="/readme_images/user_rj45_pinout.jpg" width="150">
 
 The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
@@ -155,7 +155,7 @@ There is also a small breakout available that exposes these signals for 5V singl
 
 The RJ45 pinout:
 
-<img src="/readme_images/encoder_rj45_pinout.jpg" width="150"><img src="/readme_images/encoder_render.jpg" width="400">
+<img src="/readme_images/encoder_rj45_pinout.jpg" width="150">
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
