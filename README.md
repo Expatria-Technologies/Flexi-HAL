@@ -47,7 +47,7 @@ https://github.com/Expatria-Technologies/remora-flexi-hal/releases
 Accessory Breakout PCBs are located here:  
 https://github.com/Expatria-Technologies/EST_Accessory_PCB
 
-Various community mods and accessories are located here: 
+Various community mods and accessories are located here:  
 https://github.com/Expatria-Technologies/Mods-Accessories
 
 ## Flexi-HAL Overview
