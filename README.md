@@ -41,8 +41,14 @@ https://github.com/Expatria-Technologies/STM32F4xx/releases
 Source code for the customized Remora component to run in LinuxCNC is located here:  
 https://github.com/Expatria-Technologies/remora-flexi-hal
 
-Prebuilt Raspberry Pi 4B image is located here:
+Prebuilt Raspberry Pi 4B image is located here:  
 https://github.com/Expatria-Technologies/remora-flexi-hal/releases
+
+Accessory Breakout PCBs are located here:  
+https://github.com/Expatria-Technologies/EST_Accessory_PCB
+
+Various community mods and accessories are located here:  
+https://github.com/Expatria-Technologies/Mods-Accessories
 
 ## Flexi-HAL Overview
 
@@ -104,7 +110,7 @@ https://github.com/grblHAL/Plugins_spindle/
 
 By default both GRBL and the Flexi-HAL expect NPN NC limit switches.  PNP switches are not supported. NO switches can also be used on any switch input.
 
-The first four axes have single limit inputs that are also accessible via the RJ45 EST limit breakout connector.  A sample design for a breakout panel is included in the CAM_Outputs folder.  GRBL always knows the direction of travel so individual min and max pins are not required.  Auto-squaring is supported by enabling ganged axes in GRBLHAL and setting the appropriate pins.
+The first four axes have single limit inputs that are also accessible via the RJ45 EST limit breakout connector.  GRBL always knows the direction of travel so individual min and max pins are not required.  Auto-squaring is supported by enabling ganged axes in GRBLHAL and setting the appropriate pins.
 
 In addition to the limit signals, there are two probe input pins on the limit RJ45 breakout connector and the main PCB that are multiplexed via XOR logic and share a single input pin on the microcontroller.
 
@@ -112,7 +118,7 @@ For the dual-input signals there is no need to terminate unused ports.
 
 The RJ45 pinout:
 
-<img src="/readme_images/limit_rj45_pinout.jpg" width="150"><img src="/readme_images/limit_mod_render.jpg" width="150">
+<img src="/readme_images/limit_rj45_pinout.jpg" width="150">
 
 ### User Buttons
 
@@ -120,7 +126,7 @@ Standard CNC functions are mapped to 4 inputs.  These signals are primarily inte
 
 The RJ45 pinout:
 
-<img src="/readme_images/user_rj45_pinout.jpg" width="150"><img src="/readme_images/User_mod_render.jpg" width="400">
+<img src="/readme_images/user_rj45_pinout.jpg" width="150">
 
 The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
@@ -147,6 +153,12 @@ https://github.com/Expatria-Technologies/RT_Jog_Controller/
 
 ### Spindle Sync Port
 This port allows a differential connection to an external module for a robust GRBLHAL lathe implementation or to support a high-speed encoder input for LinuxCNC.  An encoder such as E6B2-CWZ1X is suitable for most spindle applications.
+
+There is also a small breakout available that exposes these signals for 5V single-ended NPN input to interface with more basic sensors and other switched inputs.
+
+The RJ45 pinout:
+
+<img src="/readme_images/encoder_rj45_pinout.jpg" width="150">
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
