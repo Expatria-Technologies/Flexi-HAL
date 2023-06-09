@@ -114,6 +114,8 @@ The first four axes have single limit inputs that are also accessible via the RJ
 
 In addition to the limit signals, there are two probe input pins on the limit RJ45 breakout connector and the main PCB that are multiplexed via XOR logic and share a single input pin on the microcontroller.
 
+<img src="/readme_images/XOR_switches.gif" width="300">
+
 For the dual-input signals there is no need to terminate unused ports.
 
 The RJ45 pinout:
