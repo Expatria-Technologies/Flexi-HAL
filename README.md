@@ -24,7 +24,7 @@ The key features of the Flexi-HAL:
 3) Onboard 5V power regulator.
 4) Integrated RS485 with automatic direction control.
 5) Support for closed loop stepper motors and servos with alarm feedback.
-6) Differential interface for a spindle encoder input that can be utilized by GRBLHAL and LinuxCNC.
+6) Differential interface for a spindle encoder inputC.
 7) Real-time control port for remote handwheels and pendants.
 8) Raspberry Pi GPIO connector allows integration of sender software and allows the board to host a full LinuxCNC installation.
 9) 10V or 5V spindle control including PWM output via selectable jumpers.
