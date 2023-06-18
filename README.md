@@ -52,6 +52,9 @@ https://github.com/Expatria-Technologies/EST_Accessory_PCB
 Various community mods and accessories are located here:  
 https://github.com/Expatria-Technologies/Mods-Accessories
 
+Recommended GRBLHAL Post Processor is here:  
+https://github.com/Dietz0r/grblHAL_Fusion360_Post_Processor
+
 ## Flexi-HAL Overview
 
 <img src="/readme_images/Board_Overview.png" width="700">
