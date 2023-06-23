@@ -34,7 +34,7 @@ The key features of the Flexi-HAL:
 13) Additional auxilliary inputs and relay driver outputs.
 14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 15) Easy reliable USB-C connection to a PC
-16) GRBLHAL Websockets or Telnet communication options with uFlexiNET module.
+16) GRBLHAL Ethernet Websockets or Telnet communication options with uFlexiNET module.
 17) GRBLHAL SD card G-Code streaming and macro/subroutine storage (including looping and conditional execution) with uFelxiNET module.
 
 Optimized GRBLHAL driver is located here:  
