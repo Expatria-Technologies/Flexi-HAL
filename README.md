@@ -88,7 +88,7 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
 <img src="/readme_images/power_bypass.jpg" width="500">
-Normally the MCU and RPI header will be powered via the USBC connector.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
+Normally the MCU and RPI header will be powered via the USBC connector.  The Jog2K is also powered from the isolated domain.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
 
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
