@@ -1,5 +1,5 @@
 ![Logo](/readme_images/logo_sm.jpg)
-# Flexi-HAL CNC Controller
+# FlexiHAL CNC Controller
 <img src="/readme_images/Board_Photo.jpg" width="800">
 
 
@@ -11,20 +11,20 @@ https://expatria.myshopify.com/products/flexi-hal
 
 Please consider buying a board to support our open-source designs. 
 
-The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
+The FlexiHAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
-The Flexi-HAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
+The FlexiHAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
 
 https://github.com/Expatria-Technologies/RT_Jog_Controller
 
-The key features of the Flexi-HAL:
+The key features of the FlexiHAL:
 
 1) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
 2) Integrated support for 3 wire inductive type powered switches.
 3) Onboard 5V power regulator.
 4) Integrated RS485 with automatic direction control.
 5) Support for closed loop stepper motors and servos with alarm feedback.
-6) Differential interface for a spindle encoder input that can be utilized by GRBLHAL and LinuxCNC.
+6) Differential interface for a spindle encoder inputC.
 7) Real-time control port for remote handwheels and pendants.
 8) Raspberry Pi GPIO connector allows integration of sender software and allows the board to host a full LinuxCNC installation.
 9) 10V or 5V spindle control including PWM output via selectable jumpers.
@@ -34,6 +34,8 @@ The key features of the Flexi-HAL:
 13) Additional auxilliary inputs and relay driver outputs.
 14) All machine facing IO is galvanically isolated from the MCU and user interfaces.
 15) Easy reliable USB-C connection to a PC
+16) GRBLHAL Ethernet Websockets or Telnet communication options with uFlexiNET module.
+17) GRBLHAL SD card G-Code streaming and macro/subroutine storage (including looping and conditional execution) with uFelxiNET module.
 
 Optimized GRBLHAL driver is located here:  
 https://github.com/Expatria-Technologies/STM32F4xx/releases
@@ -49,6 +51,9 @@ https://github.com/Expatria-Technologies/EST_Accessory_PCB
 
 Various community mods and accessories are located here:  
 https://github.com/Expatria-Technologies/Mods-Accessories
+
+Recommended GRBLHAL Post Processor is here:  
+https://github.com/Dietz0r/grblHAL_Fusion360_Post_Processor
 
 ## Flexi-HAL Overview
 
@@ -83,7 +88,7 @@ The Flexi-HAL features the capability for full power and ground isolation betwee
 Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  This is important to consider when using external relays that draw a lot of current as this may overwhelm the capacity of the board.  If you need to drive more than 250 mA through the auxillary and mist/coolant relay outputs, external relays are likely required.
 
 <img src="/readme_images/power_bypass.jpg" width="500">
-Normally the MCU and RPI header will be powered via the USBC connector.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
+Normally the MCU and RPI header will be powered via the USBC connector.  The Jog2K is also powered from the isolated domain.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
 
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
