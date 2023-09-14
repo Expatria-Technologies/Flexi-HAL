@@ -1,5 +1,5 @@
 ![Logo](/readme_images/logo_sm.jpg)
-# FlexiHAL CNC Controller
+# Flexi-HAL CNC Controller
 <img src="/readme_images/Board_Photo.jpg" width="800">
 
 
@@ -11,13 +11,13 @@ https://expatria.myshopify.com/products/flexi-hal
 
 Please consider buying a board to support our open-source designs. 
 
-The FlexiHAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
+The Flexi-HAL was designed to be an EMI resistant IO platform for any microcontroller based CNC/motion control firmware or software.  This board includes a few features that we couldn't find on other boards, and it reduces the amount of extra wiring in our setups.  In the co-operative spirit of the PrintNC and other CNC communities, and Open Source Hardware, the Flexi-HAL will be licensed and free to use by all parties, including commercial parties, under the CERN-OHL-S V2 license.  It is our hope that the community finds the design useful and that it may be carried forward to help advance the PrintNC and broader CNC hobby community.
 
-The FlexiHAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
+The Flexi-HAL incorporates community driven elements from the PrintNC Electronic Standardization (EST) Project.  As part of this project, two additional breakout boards have been created for the user controls and limits/probe inputs.  These are simple boards and could easily be milled and hand assembled, but fabrication files for each are available in the CAM_Outputs folder.  The inputs are accessible via the RJ45 connectors on the Flexi-HAL mainboard.  In addition, the Flexi-HAL is intended to be used with the Expatria Real-Time jog controller or similar peripheral:
 
 https://github.com/Expatria-Technologies/RT_Jog_Controller
 
-The key features of the FlexiHAL:
+The key features of the Flexi-HAL:
 
 1) 5 Axis of isolated step/dir motor control featuring high-speed digital isolators and differential signal drivers for maximum signal integrity and step rates.
 2) Integrated support for 3 wire inductive type powered switches.
@@ -93,7 +93,7 @@ Normally the MCU and RPI header will be powered via the USBC connector.  The Jog
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
 
-The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortuantely you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin conneciton allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for the motion signals.
+The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortunately you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin connection allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for the motion signals.
 
 ### Analog Spindle Control
 
@@ -141,7 +141,7 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 
 <img src="/readme_images/haltsel.png" width="400">
 
-Starting from A5 revision, the polarity of the HALT signal to the MCU can be inverted by moving the jumper pictured above to the leftmost two pins.  This allows you to connect an NC overtravel sensor or NC e-stop circuit to the FlexiHAL without the need for an external relay.  You must ensure that the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+Starting from A5 revision, the polarity of the HALT signal to the MCU can be inverted by moving the jumper pictured above to the leftmost two pins.  This allows you to connect an NC overtravel sensor or NC e-stop circuit to the Flexi-HAL without the need for an external relay.  You must ensure that the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
 
 ### Spindle, Flood and Mist relay drivers
 The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The maximum coil current for each output should not exceed 250mA.
