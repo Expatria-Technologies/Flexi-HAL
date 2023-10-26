@@ -55,7 +55,7 @@ https://github.com/Expatria-Technologies/Mods-Accessories
 Recommended GRBLHAL Post Processor is here:  
 https://github.com/Dietz0r/grblHAL_Fusion360_Post_Processor
 
-uFlexiNET expansion card is here:
+uFlexiNET expansion card is here:  
 https://github.com/Expatria-Technologies/uFlexiNET
 
 ## Flexi-HAL Overview
