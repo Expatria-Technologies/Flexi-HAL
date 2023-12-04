@@ -177,8 +177,11 @@ The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi typ
 <img src="/readme_images/Pi_Pinout.jpg" width="500">
 
 ### Accessories
-
 Some 3D printed accessories are avilable in [Mods & Accessories](https://github.com/Expatria-Technologies/Mods-Accessories/), including a DIN rail mount and enclosures/mounts for the limit and button breakouts.
+
+### Example Wiring Diagram
+A comprehensive wiring diagram has been developed by the PrintNC community using the FlexiHAL.  While not specific to Flexi, this gives a great example of how to connect the board into the rest of a complete electronics box to drive a CNC machine.
+https://wiki.printnc.info/en/v3/wiring
 
 
 ### Attributions
