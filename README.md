@@ -184,10 +184,21 @@ The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi typ
 ### Accessories
 Some 3D printed accessories are avilable in [Mods & Accessories](https://github.com/Expatria-Technologies/Mods-Accessories/), including a DIN rail mount and enclosures/mounts for the limit and button breakouts.
 
+### Default Jumper Locations
+![image](https://github.com/Expatria-Technologies/Flexi-HAL/assets/6061539/06c76aa8-7ccc-4621-a8f2-30bbd142a144)
+By default the following jumpers should be populated.
+This has the following effects:
+The RPI Header uart is connected to the internal MCU UART - this is necessary to flash Remora firmware from the RPI and also is used with the uFlexiNET module for the SD card chip select.
+The HALT polarity is set for use with an NO button like the button breakout.
+The analog spindle output is set for 0-10V.
+The analog spindle section is connected to the onboard 12V supply.
+The analog spindle section ground is connected to the PCB external ground.
+The aux outputs are powered via the main 24V input.
+
+
 ### Example Wiring Diagram
 A comprehensive wiring diagram has been developed by the PrintNC community using the FlexiHAL.  While not specific to Flexi, this gives a great example of how to connect the board into the rest of a complete electronics box to drive a CNC machine. 
 https://wiki.printnc.info/en/v3/wiring
-
 
 ### Attributions
 This project uses components from the very helpful actiBMS library.
