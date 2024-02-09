@@ -186,7 +186,7 @@ Some 3D printed accessories are avilable in [Mods & Accessories](https://github.
 
 ### Default Jumper Locations
 ![image](https://github.com/Expatria-Technologies/Flexi-HAL/assets/6061539/06c76aa8-7ccc-4621-a8f2-30bbd142a144)
-By default the following jumpers should be populated.
+By default the following jumpers (shown in the graphic in RED) should be populated.
 This has the following effects:
 The RPI Header uart is connected to the internal MCU UART - this is necessary to flash Remora firmware from the RPI and also is used with the uFlexiNET module for the SD card chip select.
 The HALT polarity is set for use with an NO button like the button breakout.
