@@ -58,6 +58,9 @@ https://github.com/Dietz0r/grblHAL_Fusion360_Post_Processor
 uFlexiNET expansion card is here:  
 https://github.com/Expatria-Technologies/uFlexiNET
 
+The uf2 bootloader can be found here:  
+https://github.com/Expatria-Technologies/tinyuf2/releases
+
 ## Flexi-HAL Overview
 
 <img src="/readme_images/Board_Overview.png" width="700">
