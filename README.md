@@ -101,7 +101,7 @@ Normally the MCU and RPI header will be powered via the USBC connector.  The Jog
 
 The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortunately you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin connection allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for the motion signals.
 
-When using the alarm input the external drivers need to be configured for open-drain, active-low output.  The alarmmoutput must be high impedance during normal operation.
+When using the alarm input the external drivers need to be configured for open-drain, active-low output.  The alarm output must be high impedance during normal operation.
 
 Typical wiring for most open-loop stepper drivers: 
 
