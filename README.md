@@ -154,7 +154,11 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 
 <img src="/readme_images/haltsel.png" width="400">
 
-Starting from A5 revision, the polarity of the HALT signal to the MCU can be inverted by moving the jumper pictured above to the leftmost two pins.  This allows you to connect an NC overtravel sensor or NC e-stop circuit to the Flexi-HAL without the need for an external relay.  You must ensure that the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+Starting from A5 revision, the HALT signals from the Flexi-HAL board header and the RJ45 user button breakout are connected via an XOR gate. The polarity of the signal to the MCU can be inverted by moving the jumper P12 pictured above. The default state (as shown / rightmost two pins) is suitable for use with NO switches or if NC switches are connected to both the Flexi-HAL header and the RJ45 breakout. 
+
+Moving the jumper to the leftmost two pins allows you to use a single NC switch connected to the Flexi-HAL header or RJ45 breakout, with or without a NO switch connected to the other. The typical use case for this alternate configuration is with an NC overtravel sensor or NC e-stop circuit without the need for an external relay. 
+
+If you are in doubt of the correct header position for your case, you may simply try both positions and choose the one where the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
 
 ### Spindle, Flood and Mist relay drivers
 The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The absolute maximum coil current for each output should not exceed 250mA.  In general, the coil resistance should be 150 Ohm or greater.  The relay outputs are active-low, the high side is connected to the main power input.
