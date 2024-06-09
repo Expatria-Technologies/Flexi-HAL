@@ -96,6 +96,8 @@ Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  Th
 <img src="/readme_images/power_bypass.jpg" width="500">
 Normally the MCU and RPI header will be powered via the USBC connector.  The Jog2K is also powered from the isolated domain.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
 
+Note: With the isolation jumpers not-populatd, and the Flexi-HAL connected to 12-24v power, it may appear that the board is ready to run as some LEDs illuminate. You MUST provide 5v power to the isolated domain (MCU, Jogger) either through USB or the bypass jumpers in order for the MCU and Jogger to turn on!
+
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
 
