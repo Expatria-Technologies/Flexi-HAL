@@ -58,6 +58,9 @@ https://github.com/Dietz0r/grblHAL_Fusion360_Post_Processor
 uFlexiNET expansion card is here:  
 https://github.com/Expatria-Technologies/uFlexiNET
 
+The uf2 bootloader can be found here:  
+https://github.com/Expatria-Technologies/tinyuf2/releases
+
 ## Flexi-HAL Overview
 
 <img src="/readme_images/Board_Overview.png" width="700">
@@ -78,7 +81,7 @@ By using a common STM32F4 MCU, the Flexi-HAL is also able to easily host ports o
 
 ### UF2 Bootloader
 The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatria will come with this bootloader installed. This allows you to upgrade or change the firmware on the flexi as easily as copying a file to a USB drive.  Pre-built binary firmwares from Expatria are distributed as UF2 files.  There are two ways to access bootloader mode and change the firmware:
-1) Power up the MCU section (connect the USB cable) while holding the HALT and HOLD buttons.
+1) Power up the MCU section (connect the USB cable) while holding the CYC/ST and FD/HLD buttons.
 2) Double-tap the reset (RST) button on the side of the board near the USBC port.
 
 Once in bootloader mode, the Flexi will appear as a USB storage device called "FLEXI446" and the X limit light will flash briefly if there is no signal asserted on that pin (switch is open).  Simply copy the new firwmare to this USB drive and the board will automatically install it and reboot.
@@ -93,10 +96,14 @@ Flexi-HAL has reverse polarity as well as over-current protection beyond 1A.  Th
 <img src="/readme_images/power_bypass.jpg" width="500">
 Normally the MCU and RPI header will be powered via the USBC connector.  The Jog2K is also powered from the isolated domain.  By installing two jumpers on the above offset pins, the 5V power and ground isolation can be bypassed and the Flexi-HAL will operate without an external 5V supply in a semi-isolated state.  This does reduce the EMI resistance of the board and is not recommended when sending Gcode via the USBC connector.
 
+Note: With the isolation jumpers not-populatd, and the Flexi-HAL connected to 12-24v power, it may appear that the board is ready to run as some LEDs illuminate. You MUST provide 5v power to the isolated domain (MCU, Jogger) either through USB or the bypass jumpers in order for the MCU and Jogger to turn on!
+
 ### Stepper Drivers
 <img src="/readme_images/Stepper_Pins.jpg" width="300">
 
 The stepper drivers are designed to be used with IDC connectors that are quick to assemble.  Unfortunately you will need to ensure that at the external driver the high and low signal pairs are connected correctly as there is no standard pinout on these drivers.  The 8 pin connection allows you to run a high and low pair for every signal to ensure the best possible signal integrity.  The Flexi-HAL uses high speed digital isolators and differential RS-422 style signal drivers for the motion signals.
+
+When using the alarm input the external drivers need to be configured for open-drain, active-low output.  The alarm output must be high impedance during normal operation.  In normal operation the blue MOTOR LED will be lit indicating that there are no active alarms.
 
 Typical wiring for most open-loop stepper drivers: 
 
@@ -149,14 +156,18 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 
 <img src="/readme_images/haltsel.png" width="400">
 
-Starting from A5 revision, the polarity of the HALT signal to the MCU can be inverted by moving the jumper pictured above to the leftmost two pins.  This allows you to connect an NC overtravel sensor or NC e-stop circuit to the Flexi-HAL without the need for an external relay.  You must ensure that the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+Starting from A5 revision, the HALT signals from the Flexi-HAL board header and the RJ45 user button breakout are connected via an XOR gate. The polarity of the signal to the MCU can be inverted by moving the jumper P12 pictured above. The default state (as shown / rightmost two pins) is suitable for use with NO switches or if NC switches are connected to both the Flexi-HAL header and the RJ45 breakout. 
+
+Moving the jumper to the leftmost two pins allows you to use a single NC switch connected to the Flexi-HAL header or RJ45 breakout, with or without a NO switch connected to the other. The typical use case for this alternate configuration is with an NC overtravel sensor or NC e-stop circuit without the need for an external relay. 
+
+If you are in doubt of the correct header position for your case, you may simply try both positions and choose the one where the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
 
 ### Spindle, Flood and Mist relay drivers
-The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The maximum coil current for each output should not exceed 250mA.
+The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The absolute maximum coil current for each output should not exceed 250mA.  In general, the coil resistance should be 150 Ohm or greater.  The relay outputs are active-low, the high side is connected to the main power input.
 
 ### Auxillary relay drivers
 <img src="/readme_images/AUX_POWER.jpg" width="200">
-Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  By default the jumper is left unpopulated and power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications - they should never be used to drive inductive loads.  Never populate P17 and the external supply at the same time.
+Four axilliary relay outputs are exposed.  These have a maximum combined drive current of 1000 mA when operated via a dedicated power supply.  The relay voltage can be selected via a 3 pin jumper between the main board power supply, the onboard 12V supply and the onboard 5V supply.  If the jumper is left unpopulated power for the aux outputs is supplied via the dedicated (fused and polarity protected) input.  The 12V and 5V options cannot drive more than 20 mA per pin and are only used for TTL signalling applications - they should never be used to drive inductive loads.  Never populate P17 and the external supply at the same time.  When driving external relays, the coil resistance should be 150 Ohm or greater.  The relay outputs are active-low, the high side is connected via the power selection jumper.
 
 ### Real-Time Control Port
 <img src="/readme_images/Jog2k_Enclosure_2.png" width="500">
@@ -184,10 +195,21 @@ The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi typ
 ### Accessories
 Some 3D printed accessories are avilable in [Mods & Accessories](https://github.com/Expatria-Technologies/Mods-Accessories/), including a DIN rail mount and enclosures/mounts for the limit and button breakouts.
 
+### Default Jumper Locations
+![image](https://github.com/Expatria-Technologies/Flexi-HAL/assets/6061539/06c76aa8-7ccc-4621-a8f2-30bbd142a144)
+By default the following jumpers (shown in the graphic in RED) should be populated.
+This has the following effects:
+The RPI Header uart is connected to the internal MCU UART - this is necessary to flash Remora firmware from the RPI and also is used with the uFlexiNET module for the SD card chip select.
+The HALT polarity is set for use with an NO button like the button breakout.
+The analog spindle output is set for 0-10V.
+The analog spindle section is connected to the onboard 12V supply.
+The analog spindle section ground is connected to the PCB external ground.
+The aux outputs are powered via the main 24V input.
+
+
 ### Example Wiring Diagram
 A comprehensive wiring diagram has been developed by the PrintNC community using the FlexiHAL.  While not specific to Flexi, this gives a great example of how to connect the board into the rest of a complete electronics box to drive a CNC machine. 
 https://wiki.printnc.info/en/v3/wiring
-
 
 ### Attributions
 This project uses components from the very helpful actiBMS library.
