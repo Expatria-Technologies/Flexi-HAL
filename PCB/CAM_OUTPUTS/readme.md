@@ -5,4 +5,4 @@ These files are provided under the terms of the CERN Open Hardware Licence Versi
 
 They are published 'as is' with no warranty expressed or implied that they are fit for any purpose.
 
-Additionally, it is impossible to provide technical support (even informally) for boards made by third parties and such support requests will be (polietly) declined.
+Additionally, it is impossible to provide technical support (even informally) for boards made by third parties and such support requests will be (politely) declined.
