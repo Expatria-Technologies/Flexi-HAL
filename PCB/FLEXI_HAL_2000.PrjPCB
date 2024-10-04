@@ -339,6 +339,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UNLWNZID
 
+[Document18]
+DocumentPath=..\..\picohal_hw\PicoHAL.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [ProjectVariant1]
 UniqueId=2FD7A5CA-1890-45CB-96AB-94166B7423FD
 Description=SMT_ONLY
