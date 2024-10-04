@@ -84,7 +84,7 @@ The Flexi-HAL is meant to be used with a UF2 bootloader. All boards from Expatri
 1) Power up the MCU section (connect the USB cable) while holding the CYC/ST and FD/HLD buttons.
 2) Double-tap the reset (RST) button on the side of the board near the USBC port.
 
-Once in bootloader mode, the Flexi will appear as a USB storage device called "FLEXI446" and the X limit light will flash briefly if there is no signal asserted on that pin (switch is open).  Simply copy the new firwmare to this USB drive and the board will automatically install it and reboot.  Some operating systems may give an error when flashing is complete because th 'disk' was removed without ejecting it.  This error can be ignored.
+Once in bootloader mode, the Flexi will appear as a USB storage device called "FLEXI446" and the X limit light will flash briefly if there is no signal asserted on that pin (switch is open).  Simply copy the new firwmare to this USB drive and the board will automatically install it and reboot.  Some operating systems may give an error when flashing is complete because the 'disk' was removed without ejecting it.  This error can be ignored.
 
 ### Power Input
 <img src="/readme_images/isolation_zones.png" width="500">
@@ -188,7 +188,7 @@ The RJ45 pinout:
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
-The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project, as well as hosting senders such as cnc.js or Gsender in Host mode.
+The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project.
 
 <img src="/readme_images/Pi_Pinout.jpg" width="500">
 
