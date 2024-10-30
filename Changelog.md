@@ -19,4 +19,4 @@
 - Fixed silkscreen issue on Probe and Tool ports.
 - Updated silkscreen to clarify copyright permissions on Expatria and FlexiHAL names.
 - Added solder points to USB nets on top layer.
-- Changed encoder pinout for better signal integrity.
+- Changed encoder routing for better signal integrity.  Pinout is unchanged.
