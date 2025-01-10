@@ -188,7 +188,7 @@ The RJ45 pinout:
 
 ### Raspberry PI expansion header
 <img src="/readme_images/Pi_Installed.png" width="500">
-The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project.
+The Rasberry Pi GPIO header allows the Flexi-HAL to host a full Raspberry Pi type SBC.  This allows the platform to support LinuxCNC via the Remora project.  Power should be connected to either the Pi or to the FlexiHAL, not both.
 
 <img src="/readme_images/Pi_Pinout.jpg" width="500">
 
