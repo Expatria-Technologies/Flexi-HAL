@@ -156,9 +156,15 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 
 <img src="/readme_images/haltsel.png" width="400">
 
-Starting from A5 revision, the HALT signals from the Flexi-HAL board header and the RJ45 user button breakout are connected via an XOR gate. The polarity of the signal to the MCU can be inverted by moving the jumper P12 pictured above. The default state (as shown / rightmost two pins) is suitable for use with NO switches or if NC switches are connected to both the Flexi-HAL header and the RJ45 breakout. 
+Starting from A5 revision, the HALT signals from the Flexi-HAL board header port and the RJ45 user button breakout / Jog2K port are connected via an XOR gate. 
+This was added to allow mixing "Normally Closed" (NC) and "Normally Open" (NO) switches.
 
-Moving the jumper to the leftmost two pins allows you to use a single NC switch connected to the Flexi-HAL header or RJ45 breakout, with or without a NO switch connected to the other. The typical use case for this alternate configuration is with an NC overtravel sensor or NC e-stop circuit without the need for an external relay. 
+At the default jumper position (illustrated above), Halt is triggered if the two ports have different signals.
+This means that a single NO, 2 NO, or 2 NC switches can be used.
+
+If you wish to mix NO and NC, you need to move the jumper.
+Examples of this is using both the Jog2K (NO) and the common Toolsetter with overtravel protection (NC).
+
 
 If you are in doubt of the correct header position for your case, you may simply try both positions and choose the one where the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
 
