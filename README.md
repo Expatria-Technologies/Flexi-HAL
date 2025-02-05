@@ -156,11 +156,30 @@ The HALT signal is not a safety feature and should not be used in place of a tru
 
 <img src="/readme_images/haltsel.png" width="400">
 
-Starting from A5 revision, the HALT signals from the Flexi-HAL board header and the RJ45 user button breakout are connected via an XOR gate. The polarity of the signal to the MCU can be inverted by moving the jumper P12 pictured above. The default state (as shown / rightmost two pins) is suitable for use with NO switches or if NC switches are connected to both the Flexi-HAL header and the RJ45 breakout. 
+Starting from A5 revision, the HALT signals from the Flexi-HAL board header port and the RJ45 user button breakout port are connected via an XOR gate. 
+This was added to allow mixing "Normally Closed" (NC) and "Normally Open" (NO) switches.
 
-Moving the jumper to the leftmost two pins allows you to use a single NC switch connected to the Flexi-HAL header or RJ45 breakout, with or without a NO switch connected to the other. The typical use case for this alternate configuration is with an NC overtravel sensor or NC e-stop circuit without the need for an external relay. 
+At the default jumper position (illustrated above), Halt is triggered if the two ports have __different__ signals (High vs Low).
+This means that a single NO, 2 NO, or 2 NC switches can be used.
+
+|          | Engaged Switch | Other Switch    |
+|----------|----------------|-----------------| 
+|Single NO | High           | Low (Unconnected)|
+|Two NO    | High           | Low              |
+|Two NC    | Low            | High             |
+
+
+If you wish to mix NO and NC, you need to move the jumper. Then Halt triggers if the two ports have __same__ signals.
+Examples of this is using both the User Button Breakout (NO) and the common Toolsetter with overtravel protection (NC).
+|                 | Halt button (NO)| Toolsetter overtravel (NC)|
+|-----------------|----------------|-----------------------| 
+|Halt pushed      | High           | High                  |
+|Toolsetter pushed| Low            | Low                   |
+
 
 If you are in doubt of the correct header position for your case, you may simply try both positions and choose the one where the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+
+(__Note:__ Do not change GRBL setting 14 to try and invert the halt("EStop"), as this is not the same and can make the Jog2K Halt button unresponsive)
 
 ### Spindle, Flood and Mist relay drivers
 The Spindle, Flood and Mist relay outputs are driven from the main board supply.  External relays should be selected to match the power supplied to the Flexi-HAL.  The absolute maximum coil current for each output should not exceed 250mA.  In general, the coil resistance should be 150 Ohm or greater.  The relay outputs are active-low, the high side is connected to the main power input.
