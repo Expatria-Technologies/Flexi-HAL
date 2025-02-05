@@ -178,6 +178,7 @@ Examples of this is using both the User Button Breakout (NO) and the common Tool
 
 
 If you are in doubt of the correct header position for your case, you may simply try both positions and choose the one where the HALT signal is not asserted (red light is not on) when in the nominal operating condition.
+
 (__Note:__ Do not change GRBL setting 14 to try and invert the halt("EStop"), as this is not the same and can make the Jog2K Halt button unresponsive)
 
 ### Spindle, Flood and Mist relay drivers
