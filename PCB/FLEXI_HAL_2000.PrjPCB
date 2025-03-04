@@ -33,7 +33,7 @@ FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
 IsVirtualBomDocumentRemoved=1
-OutputPath=Project Outputs for FLEXI_HAL_2000
+OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -449,20 +449,20 @@ Path=..\libraries\*.*
 IncludeSubFolders=1
 
 [Parameter1]
-Name=VarRevNo
-Value=A7
-
-[Parameter2]
-Name=Title
+Name=PCBPARTNO
 Value=Flexi-HAL 2000
 
-[Parameter3]
+[Parameter2]
 Name=PCBREVNO
 Value=A7
 
-[Parameter4]
-Name=PCBPARTNO
+[Parameter3]
+Name=Title
 Value=Flexi-HAL 2000
+
+[Parameter4]
+Name=VarRevNo
+Value=A7
 
 [Configuration1]
 Name=Default Configuration
@@ -631,7 +631,7 @@ TerminationPrefC7=0
 TerminationVCC7=5
 
 [Generic_EDE]
-OutputDir=Project Outputs for FLEXI_HAL_2000
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
