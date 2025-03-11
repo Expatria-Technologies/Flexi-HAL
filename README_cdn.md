@@ -44,7 +44,7 @@ Source code for the customized Remora component to run in LinuxCNC is located he
 https://github.com/Expatria-Technologies/remora-flexi-hal
 
 Prebuilt Raspberry Pi 4B image is located here:  
-https://github.com/Expatria-Technologies/remora-flexi-hal/releases
+https://github.com/Expatria-Technologies/Flexi-Pi
 
 Accessory Breakout PCBs are located here:  
 https://github.com/Expatria-Technologies/EST_Accessory_PCB
