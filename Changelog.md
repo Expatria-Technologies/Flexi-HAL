@@ -15,7 +15,7 @@
 - Added termination resistors to encoder input to improve signal integrity.
 - Added additional overvoltage protection to external circuits.
 
-- ### A6 Revision
+- ### A7 Revision
 - Fixed silkscreen issue on Probe and Tool ports.
 - Updated silkscreen to clarify copyright permissions on Expatria and FlexiHAL names.
 - Added solder points to USB nets on top layer.
