@@ -150,7 +150,7 @@ The RJ45 pinout:
 
 <img src="/readme_images/user_rj45_pinout.jpg" width="150">
 
-The HALT signal is not a safety feature and should not be used in place of a true electrical emergerncy stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
+The HALT signal is not a safety feature and should not be used in place of a true electrical emergency stop.  It is intended to notify the controller of urgent requests and should be NO as it is shared between the PCB terminal block, RJ45 output and motor alarm.
 
 ### HALT Polarity Selection
 
