@@ -40,7 +40,7 @@ The key features of the Flexi-HAL:
 16) GRBLHAL Ethernet Websockets or Telnet communication options with uFlexiNET module.
 17) GRBLHAL SD card G-Code streaming and macro/subroutine storage (including looping and conditional execution) with uFelxiNET module.
 
-Optimized GRBLHAL driver is located here:  
+Pre-compiled GRBLHAL binaries from are located here:  
 https://github.com/Expatria-Technologies/STM32F4xx/releases
 
 Source code for the customized Remora component to run in LinuxCNC is located here:  
